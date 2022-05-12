@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GithubUser</string>
+    <string name="mode_gelap">mode malam</string>
     <string name="avatars">avatars</string>
     <string name="following">Following</string>
     <string name="followers">Followers</string>
@@ -13,5 +15,4 @@
     <string name="detail_information">Detail Information</string>
     <string name="setting">setting</string>
     <string name="favorite">favorite</string>
-    <string name="mode_gelap">mode malam</string>
 </resources>

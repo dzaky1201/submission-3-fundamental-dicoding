@@ -1,15 +1,14 @@
 package com.dzakyhdr.githubuser.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
+import com.dzakyhdr.githubuser.SettingPreference
 import com.dzakyhdr.githubuser.data.model.UserItem
 import com.dzakyhdr.githubuser.data.repository.ErrorLoadData
 import com.dzakyhdr.githubuser.data.repository.UserRepository
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val repository: UserRepository) : ViewModel() {
+class HomeViewModel(private val repository: UserRepository, private val pref: SettingPreference) :
+    ViewModel() {
 
     private var _users = MutableLiveData<List<UserItem>>()
     val users: LiveData<List<UserItem>> get() = _users
@@ -37,5 +36,9 @@ class HomeViewModel(private val repository: UserRepository) : ViewModel() {
 
     fun onSnackbarShown() {
         _errorStatus.value = null
+    }
+
+    fun getThemeSettings(): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
     }
 }

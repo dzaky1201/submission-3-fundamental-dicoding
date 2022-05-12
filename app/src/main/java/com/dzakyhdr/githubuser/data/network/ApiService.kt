@@ -1,5 +1,6 @@
 package com.dzakyhdr.githubuser.data.network
 
+import com.dzakyhdr.githubuser.BuildConfig
 import com.dzakyhdr.githubuser.data.model.UserItem
 import com.dzakyhdr.githubuser.data.model.UserResponse
 import okhttp3.OkHttpClient
@@ -16,7 +17,7 @@ interface ApiService {
 
     @GET("search/users")
     @Headers(
-        "Authorization: token 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",
+        "Authorization: token ${BuildConfig.API_KEY}",
     )
     suspend fun getSearchUser(
         @Query("q") query: String
@@ -24,7 +25,7 @@ interface ApiService {
 
     @GET("users/{username}")
     @Headers(
-        "Authorization: token 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",
+        "Authorization: token ${BuildConfig.API_KEY}",
     )
     suspend fun getDetail(
         @Path("username") username: String
@@ -32,7 +33,7 @@ interface ApiService {
 
     @GET("users/{username}/following")
     @Headers(
-        "Authorization: token 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",
+        "Authorization: token ${BuildConfig.API_KEY}",
     )
     suspend fun getFollowingUsers(
         @Path("username") username: String
@@ -40,7 +41,7 @@ interface ApiService {
 
     @GET("users/{username}/followers")
     @Headers(
-        "Authorization: token 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",
+        "Authorization: token ${BuildConfig.API_KEY}",
     )
     suspend fun getFollowersUsers(
         @Path("username") username: String

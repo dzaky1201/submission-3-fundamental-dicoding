@@ -2,15 +2,43 @@
     <!-- Base application theme. -->
     <style name="Theme.GithubUser" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@android:color/darker_gray</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/secondaryColor</item>
-        <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="FontSize" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="FontSize.Title">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="FontSize.Subtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SplashScreenStyle" parent="Theme.AppCompat.NoActionBar"/>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.GithubUser">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.GithubUser.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 </resources>
