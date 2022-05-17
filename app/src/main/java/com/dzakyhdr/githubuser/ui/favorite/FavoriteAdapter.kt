@@ -1,4 +1,4 @@
-package com.dzakyhdr.githubuser.ui.home
+package com.dzakyhdr.githubuser.ui.favorite
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,20 +9,21 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dzakyhdr.githubuser.R
-import com.dzakyhdr.githubuser.data.remote.model.UserItem
+import com.dzakyhdr.githubuser.data.local.UserEntity
 import com.dzakyhdr.githubuser.databinding.ItemUserBinding
+import com.dzakyhdr.githubuser.ui.home.HomeFragmentDirections
 
-class HomeAdapter : ListAdapter<UserItem,HomeAdapter.UserViewHolder>(DiffCallBack()) {
+class FavoriteAdapter: ListAdapter<UserEntity, FavoriteAdapter.UserViewHolder>(DiffCallBack()) {
 
 
     class UserViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val binding = ItemUserBinding.bind(item)
 
-        fun bind(user: UserItem) {
+        fun bind(user: UserEntity) {
             Glide.with(binding.root).load(user.avatarUrl).centerCrop().into(binding.avatars)
             binding.txtUsername.text = user.login
             binding.root.setOnClickListener {
-                val username = HomeFragmentDirections.actionHomeFragmentToDetailFragment(user.login!!)
+                val username = FavoriteFragmentDirections.actionFavoriteFragmentToDetailFragment(user.login)
                 it.findNavController().navigate(username)
             }
         }
@@ -40,12 +41,12 @@ class HomeAdapter : ListAdapter<UserItem,HomeAdapter.UserViewHolder>(DiffCallBac
 
 
 }
-class DiffCallBack: DiffUtil.ItemCallback<UserItem>(){
-    override fun areItemsTheSame(oldItem: UserItem, newItem: UserItem): Boolean {
+class DiffCallBack: DiffUtil.ItemCallback<UserEntity>(){
+    override fun areItemsTheSame(oldItem: UserEntity, newItem: UserEntity): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: UserItem, newItem: UserItem): Boolean {
+    override fun areContentsTheSame(oldItem: UserEntity, newItem: UserEntity): Boolean {
         return oldItem == newItem
     }
 

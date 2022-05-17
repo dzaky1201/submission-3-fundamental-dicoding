@@ -17,7 +17,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "API_KEY", '"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"')
+        buildConfigField("String", "API_KEY", '"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"')
     }
 
     buildTypes {
@@ -62,4 +62,8 @@ dependencies {
 
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation "androidx.room:room-ktx:2.4.2"
 }

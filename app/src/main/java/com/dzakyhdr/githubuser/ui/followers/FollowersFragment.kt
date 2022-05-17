@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dzakyhdr.githubuser.MyApplication
 import com.dzakyhdr.githubuser.databinding.FragmentFollowersBinding
 import com.dzakyhdr.githubuser.ui.following.BaseRvAdapter
 import com.google.android.material.snackbar.Snackbar
@@ -17,7 +16,7 @@ class FollowersFragment : Fragment() {
     private var _binding: FragmentFollowersBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<FollowersViewModel> {
-        FollowersViewModelFactory((activity?.application as MyApplication).repository)
+        FollowersViewModelFactory.getInstance(requireContext())
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

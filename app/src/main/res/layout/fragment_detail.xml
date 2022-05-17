@@ -14,7 +14,7 @@
             android:id="@+id/loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/txtUsername"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -59,6 +59,17 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtUsername" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_favorite_border_24"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCountFollowers"
+            app:layout_constraintEnd_toStartOf="@+id/txtCountFollowing"
+            app:layout_constraintStart_toEndOf="@+id/txtCountFollowers"
+            app:layout_constraintTop_toTopOf="@+id/txtFollowers" />
+
 
         <TextView
             android:id="@+id/txtCountFollowers"
@@ -191,7 +202,6 @@
             app:layout_constraintStart_toStartOf="@+id/lineLeft"
             app:layout_constraintTop_toBottomOf="@+id/txtLocation" />
 
-
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
@@ -210,6 +220,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tabs" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

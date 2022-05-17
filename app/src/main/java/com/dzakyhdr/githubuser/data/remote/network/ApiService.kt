@@ -1,8 +1,8 @@
-package com.dzakyhdr.githubuser.data.network
+package com.dzakyhdr.githubuser.data.remote.network
 
 import com.dzakyhdr.githubuser.BuildConfig
-import com.dzakyhdr.githubuser.data.model.UserItem
-import com.dzakyhdr.githubuser.data.model.UserResponse
+import com.dzakyhdr.githubuser.data.remote.model.UserItem
+import com.dzakyhdr.githubuser.data.remote.model.UserResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response

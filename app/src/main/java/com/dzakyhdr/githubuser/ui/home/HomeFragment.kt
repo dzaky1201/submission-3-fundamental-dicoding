@@ -12,13 +12,14 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dzakyhdr.githubuser.MyApplication
 import com.dzakyhdr.githubuser.R
 import com.dzakyhdr.githubuser.SettingPreference
 import com.dzakyhdr.githubuser.databinding.FragmentHomeBinding
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.launch
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -32,7 +33,7 @@ class HomeFragment : Fragment() {
     }
 
     private val viewModel: HomeViewModel by viewModels {
-        HomeViewModelFactory((activity?.application as MyApplication).repository, pref)
+        HomeViewModelFactory.getInstance(requireContext(), pref)
     }
 
     override fun onCreateView(
@@ -67,6 +68,7 @@ class HomeFragment : Fragment() {
                     true
                 }
                 R.id.action_favorite -> {
+                    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFavoriteFragment())
                     true
                 }
 
@@ -79,7 +81,9 @@ class HomeFragment : Fragment() {
             setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     if (query != null) {
-                        viewModel.getSearchUser(query)
+                        lifecycleScope.launch {
+                            viewModel.getSearchUser(query)
+                        }
                     }
                     clearFocus()
                     return true

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dzakyhdr.githubuser.R
-import com.dzakyhdr.githubuser.data.model.UserItem
+import com.dzakyhdr.githubuser.data.remote.model.UserItem
 import com.dzakyhdr.githubuser.databinding.ItemUserBinding
 
 class BaseRvAdapter: ListAdapter<UserItem, BaseRvAdapter.FollowingViewHolder>(DiffCallBack()) {

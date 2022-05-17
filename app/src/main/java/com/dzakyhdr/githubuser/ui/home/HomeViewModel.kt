@@ -2,7 +2,7 @@ package com.dzakyhdr.githubuser.ui.home
 
 import androidx.lifecycle.*
 import com.dzakyhdr.githubuser.SettingPreference
-import com.dzakyhdr.githubuser.data.model.UserItem
+import com.dzakyhdr.githubuser.data.remote.model.UserItem
 import com.dzakyhdr.githubuser.data.repository.ErrorLoadData
 import com.dzakyhdr.githubuser.data.repository.UserRepository
 import kotlinx.coroutines.launch

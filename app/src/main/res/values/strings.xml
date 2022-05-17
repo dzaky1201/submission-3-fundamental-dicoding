@@ -14,4 +14,5 @@
     <string name="setting">setting</string>
     <string name="favorite">favorite</string>
     <string name="mode_gelap">mode malam</string>
+    <string name="back">navigate up</string>
 </resources>

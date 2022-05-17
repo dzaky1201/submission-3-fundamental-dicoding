@@ -15,4 +15,5 @@
     <string name="detail_information">Detail Information</string>
     <string name="setting">setting</string>
     <string name="favorite">favorite</string>
+    <string name="back">navigate up</string>
 </resources>

@@ -1,28 +1,27 @@
-package com.dzakyhdr.githubuser.ui.following
+package com.dzakyhdr.githubuser.ui.favorite
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dzakyhdr.githubuser.Injection
 import com.dzakyhdr.githubuser.data.repository.UserRepository
-import com.dzakyhdr.githubuser.ui.detail.DetailViewModelFactory
 
-class FollowingViewModelFactory(private val repository: UserRepository) : ViewModelProvider.Factory {
+class FavoriteViewModelFactory(private val repository: UserRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(FollowingViewModel::class.java)) {
-            return FollowingViewModel(repository) as T
+        if (modelClass.isAssignableFrom(FavoriteViewModel::class.java)) {
+            return FavoriteViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
 
     companion object {
         @Volatile
-        private var instance: FollowingViewModelFactory? = null
+        private var instance: FavoriteViewModelFactory? = null
         fun getInstance(
             context: Context
-        ): FollowingViewModelFactory =
+        ): FavoriteViewModelFactory =
             instance ?: synchronized(this) {
-                instance ?: FollowingViewModelFactory(Injection.provideRepository(context))
+                instance ?: FavoriteViewModelFactory(Injection.provideRepository(context))
             }.also { instance = it }
     }
 }

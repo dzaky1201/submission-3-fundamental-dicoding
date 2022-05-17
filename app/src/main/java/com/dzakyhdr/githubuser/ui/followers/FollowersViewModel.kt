@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dzakyhdr.githubuser.data.model.UserItem
+import com.dzakyhdr.githubuser.data.remote.model.UserItem
 import com.dzakyhdr.githubuser.data.repository.ErrorLoadData
 import com.dzakyhdr.githubuser.data.repository.UserRepository
 import kotlinx.coroutines.launch

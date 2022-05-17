@@ -1,7 +1,7 @@
 package com.dzakyhdr.githubuser.data.repository
 
-import com.dzakyhdr.githubuser.data.model.UserItem
-import com.dzakyhdr.githubuser.data.network.ApiConfig
+import com.dzakyhdr.githubuser.data.remote.model.UserItem
+import com.dzakyhdr.githubuser.data.remote.network.ApiConfig
 
 class UserRemoteDataSource {
 
