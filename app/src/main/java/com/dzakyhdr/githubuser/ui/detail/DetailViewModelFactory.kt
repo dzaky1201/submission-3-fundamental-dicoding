@@ -4,9 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dzakyhdr.githubuser.Injection
-import com.dzakyhdr.githubuser.SettingPreference
 import com.dzakyhdr.githubuser.data.repository.UserRepository
-import com.dzakyhdr.githubuser.ui.home.HomeViewModelFactory
 
 class DetailViewModelFactory(private val repository: UserRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

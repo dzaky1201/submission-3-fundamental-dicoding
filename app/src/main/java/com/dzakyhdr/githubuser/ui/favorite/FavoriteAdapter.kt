@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.dzakyhdr.githubuser.R
 import com.dzakyhdr.githubuser.data.local.UserEntity
 import com.dzakyhdr.githubuser.databinding.ItemUserBinding
-import com.dzakyhdr.githubuser.ui.home.HomeFragmentDirections
 
 class FavoriteAdapter: ListAdapter<UserEntity, FavoriteAdapter.UserViewHolder>(DiffCallBack()) {
 

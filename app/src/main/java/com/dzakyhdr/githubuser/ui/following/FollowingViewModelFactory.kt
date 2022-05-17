@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dzakyhdr.githubuser.Injection
 import com.dzakyhdr.githubuser.data.repository.UserRepository
-import com.dzakyhdr.githubuser.ui.detail.DetailViewModelFactory
 
 class FollowingViewModelFactory(private val repository: UserRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

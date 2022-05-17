@@ -9,8 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dzakyhdr.githubuser.databinding.FragmentFavoriteBinding
-import com.dzakyhdr.githubuser.ui.home.HomeAdapter
-import com.google.android.material.snackbar.Snackbar
 
 class FavoriteFragment : Fragment() {
 
